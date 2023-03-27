@@ -4,8 +4,8 @@ import java.awt.*;
 public class DeleteMenu extends JPanel
 {
 
-    private JLabel CodeLabel;
     private JTextField CodeField;
+
     private JButton DeleteButton;
 
     public DeleteMenu()
@@ -17,8 +17,8 @@ public class DeleteMenu extends JPanel
     {
         this.setLayout(new GridLayout(2, 2));
 
-        this.add(CodeLabel = new JLabel("Code"));
-        this.add(CodeField = new JTextField());
+        this.add(new JLabel("Code"));
+        this.add(CodeField = new JTextField("PD-"));
         this.add(new JLabel(""));
         this.add(DeleteButton = new JButton("Delete"));
 
@@ -40,18 +40,18 @@ public class DeleteMenu extends JPanel
     {
         try
         {
-            MeksikoDatabaseApp.Manager.PreparedStatement = MeksikoDatabaseApp.Manager.prepareStatement("DELETE FROM menu WHERE code_menu = ?");
-            MeksikoDatabaseApp.Manager.PreparedStatement.setString(1, CodeField.getText());
+            Main.Manager.PreparedStatement = Main.Manager.prepareStatement("DELETE FROM menu WHERE code_menu = ?");
+            Main.Manager.PreparedStatement.setString(1, CodeField.getText());
 
-            if (MeksikoDatabaseApp.Manager.PreparedStatement.executeUpdate() == 0)
+            if (Main.Manager.PreparedStatement.executeUpdate() == 0)
             {
                 JOptionPane.showMessageDialog(this, "Menu not found.", "Error!", JOptionPane.ERROR_MESSAGE);
             }
             else
             {
                 JOptionPane.showMessageDialog(this, "Menu deleted!", "Success!", JOptionPane.INFORMATION_MESSAGE);
+                CodeField.setText("PD-");
             }
-
         }
         catch (Exception ex)
         {

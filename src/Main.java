@@ -1,11 +1,12 @@
 import javax.swing.*;
 import java.sql.*;
 
-public class MeksikoDatabaseApp
+public class Main
 {
 
     // Application's Database Manager
     public static DatabaseManager Manager;
+
     // Application's Main Interface
     public static DatabaseInterface Interface;
 
@@ -14,18 +15,22 @@ public class MeksikoDatabaseApp
         initialize();
     }
 
-    // Function to initializes the Application's main interface
+    // Function to initialize the Application's main interface
     private static void initialize()
     {
-        String port = "3306", urlHeader = "PTPudding", username = "root", password = "", title = "PT Pudding Database Manager";
+        // Important variables for accessing and managing your company's database
+        String port = "3306", urlHeader = "PTPudding", username = "root", password = "", companyName = "PT Pudding";
+
         if (isSafeToProceed(port, username, password))
         {
             Manager = new DatabaseManager(port, urlHeader, username, password);
-            Interface = new DatabaseInterface(title);
+            Interface = new DatabaseInterface(companyName);
         }
     }
 
     // Function to check whether it is safe to run the application based on certain conditions
+    // Conditions:
+    // Must have the MySQL Connector for Java driver attached to the project and be connected to the local server (MySQL) on the targeted port
     private static boolean isSafeToProceed(String port, String username, String password)
     {
         boolean code = true;

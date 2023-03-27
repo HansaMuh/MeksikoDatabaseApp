@@ -7,6 +7,7 @@ public class ViewMenu extends JPanel
 {
 
     private JTable DatabaseTable;
+
     private JScrollPane ScrollPane;
 
     public ViewMenu()
@@ -30,9 +31,8 @@ public class ViewMenu extends JPanel
     {
         try
         {
-            MeksikoDatabaseApp.Manager.PreparedStatement = MeksikoDatabaseApp.Manager.prepareStatement("SELECT * FROM menu");
-            ResultSet result = MeksikoDatabaseApp.Manager.PreparedStatement.executeQuery();
-
+            Main.Manager.PreparedStatement = Main.Manager.prepareStatement("SELECT * FROM menu");
+            ResultSet result = Main.Manager.PreparedStatement.executeQuery();
             DefaultTableModel tableModel = new DefaultTableModel(new Object[]
                     {
                             "Code",
@@ -40,6 +40,7 @@ public class ViewMenu extends JPanel
                             "Price",
                             "Stock Quantity"
                     }, 0);
+
             while (result.next())
             {
                 Object[] rowData =

@@ -43,7 +43,7 @@ public class DatabaseManager
         }
         catch (Exception ex)
         {
-            JOptionPane.showMessageDialog(MeksikoDatabaseApp.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(Main.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
         }
 
         return connection;
@@ -59,7 +59,7 @@ public class DatabaseManager
         }
         catch (Exception ex)
         {
-            JOptionPane.showMessageDialog(MeksikoDatabaseApp.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(Main.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
         }
 
         return statement;
@@ -75,7 +75,7 @@ public class DatabaseManager
         }
         catch (Exception ex)
         {
-            JOptionPane.showMessageDialog(MeksikoDatabaseApp.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(Main.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
         }
 
         return statement;
@@ -98,7 +98,7 @@ public class DatabaseManager
         }
         catch (Exception ex)
         {
-            JOptionPane.showMessageDialog(MeksikoDatabaseApp.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(Main.Interface, "Error detected.\nDetails:\n" + ex.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
         }
     }
 

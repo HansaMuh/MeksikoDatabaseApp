@@ -9,9 +9,9 @@ public class DatabaseInterface extends JFrame
     private UpdateMenu UpdateMenu;
     private DeleteMenu DeleteMenu;
 
-    public DatabaseInterface(String title)
+    public DatabaseInterface(String companyName)
     {
-        super(title);
+        super(companyName + " Database Manager");
         initialize();
     }
 
@@ -27,7 +27,6 @@ public class DatabaseInterface extends JFrame
         TabbedPane.addTab("View Menu", ViewMenu);
         TabbedPane.addTab("Update Menu", UpdateMenu);
         TabbedPane.addTab("Delete Menu", DeleteMenu);
-
         TabbedPane.addChangeListener(evt ->
         {
             switch (TabbedPane.getSelectedIndex())
@@ -51,8 +50,8 @@ public class DatabaseInterface extends JFrame
                     break;
             }
         });
-
         this.add(TabbedPane);
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500, 200);
         this.setResizable(false);
