@@ -51,6 +51,12 @@ public class InsertMenu extends JPanel
             I1: while (true)
             {
                 newCode = "PD-" + String.format("%03d", random.nextInt(999));
+
+                if (!result.next())
+                {
+                    break I1;
+                }
+
                 I2: while (result.next())
                 {
                     if (!result.getString("code_menu").equals(newCode))
